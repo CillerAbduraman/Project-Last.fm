@@ -60,6 +60,10 @@ Playlist_Songs.belongTo(Playlist, {foreignKey: "playlistId", targetKey: "id"})
 Playlist_Songs.belongTo(Songs, {foreignKey: "songId", targetKey: "id"})
 
                           
-
+var app = express()
+app.use(express.static('public'))
+app.use('/public', express.static('public'))
+app.use(express.json())
+app.use(express.urlencoded({extended : true}))
 
 
