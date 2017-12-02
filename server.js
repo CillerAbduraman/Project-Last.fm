@@ -12,7 +12,7 @@ sequelize.authenticate().then(function(){
     console.log('Success')
 })
 
-//define a new Model
+//define a new model
 var Genres = sequelize.define('genres', {
   name: Sequelize.STRING,
   description: Sequelize.STRING
@@ -32,7 +32,6 @@ var Songs = sequelize.define('songs', {
   playtime: Sequelize.INTEGER
 })
 
-
 var Users = sequelize.define('users',{
   username: Sequelize.STRING,
   password: Sequelize.STRING,
@@ -40,7 +39,7 @@ var Users = sequelize.define('users',{
   image:Sequelize.STRING
 })
 
-var Playlist = sequelize.define('playlist', {
+var Playlists = sequelize.define('playlists', {
   userId: Sequelize.INTEGER,
   name: Sequelize.STRING,
   description: Sequelize.STRING
@@ -53,11 +52,14 @@ var Playlist_Songs = sequelize.define('playlist_songs', {
   description: Sequelize.STRING
 })
 
+//****************************************************************************************
 Songs.belongTo(Genres, {foreignKey: "genreId", targetKey: "id"})
-Songs.belongTo(Artists, {foreignKey: "songId", targetKey: "id"})
-Playlist.belongTo(Users, {foreignKey: "userId", targetKey: "id"})    
-Playlist_Songs.belongTo(Playlist, {foreignKey: "playlistId", targetKey: "id"})
+Songs.belongTo(Artists, {foreignKey: "artistId", targetKey: "id"})
+Playlists.belongTo(Users, {foreignKey: "userId", targetKey: "id"})    
+Playlist_Songs.belongTo(Playlists, {foreignKey: "playlistId", targetKey: "id"})
 Playlist_Songs.belongTo(Songs, {foreignKey: "songId", targetKey: "id"})
+
+//****************************************************************************************
 
 app.use('/nodeadmin', nodeadmin(app))
 app.use(express.static('public'))
@@ -65,14 +67,15 @@ app.use('/admin', express.static('admin'))
 app.use(express.json());      
 app.use(express.urlencoded()); 
 
-//get a list of genres
+// ****************************************************************************************
+//GET A LIST OF GENRES
 app.get('/genres', function(request, response) {
     Genres.findAll().then(function(genres){
         response.status(200).send(genres)
     })
 })
 
-// get one genre by id
+// GET ONE GENRE BY ID
 app.get('/genres/:id', function(request, response) {
     Genres.findOne({where: {id:request.params.id}}).then(function(genre) {
         if(genre) {
@@ -84,7 +87,7 @@ app.get('/genres/:id', function(request, response) {
 })
 
 
-//create a new genre
+//CREATE A NEW GENRE
 app.post('/genres', function(request, response) {
     Genres.create(request.body).then(function(genre) {
         response.status(201).send(genre)
@@ -92,6 +95,7 @@ app.post('/genres', function(request, response) {
 })
 
 
+//UPDATE
 app.put('/genres/:id', function(request, response) {
     Genres.findById(request.params.id).then(function(genre) {
         if(genre) {
@@ -106,6 +110,7 @@ app.put('/genres/:id', function(request, response) {
     })
 })
 
+//DELETE
 app.delete('/genres/:id', function(request, response) {
     Genres.findById(request.params.id).then(function(genre) {
         if(genre) {
@@ -118,17 +123,17 @@ app.delete('/genres/:id', function(request, response) {
     })
 })
 
-
-//get a list of artists
-app.get('/artists', function(request, response) {
+// ****************************************************************************************
+//GET A LIST OF ARTISTS
+app.get('/genres', function(request, response) {
     Artists.findAll().then(function(artists){
         response.status(200).send(artists)
     })
 })
 
-// get one artist by id
+// GET ONE ARTIST BY ID
 app.get('/artists/:id', function(request, response) {
-    Artists.findOne({where: {id:request.params.id}}).then(function(artist) {
+    Artist.findOne({where: {id:request.params.id}}).then(function(artist) {
         if(artist) {
             response.status(200).send(artist)
         } else {
@@ -136,7 +141,8 @@ app.get('/artists/:id', function(request, response) {
         }
     })
 })
-//create a new artist
+
+//CREATE A NEW ARTIST
 app.post('/artists', function(request, response) {
     Artists.create(request.body).then(function(artist) {
         response.status(201).send(artist)
@@ -144,11 +150,12 @@ app.post('/artists', function(request, response) {
 })
 
 
+//UPDATE
 app.put('/artists/:id', function(request, response) {
-    Artists.findById(request.params.id).then(function(artist) {
+    Genres.findById(request.params.id).then(function(artist) {
         if(artist) {
             artist.update(request.body).then(function(artist){
-                response.status(201).send(artist)
+                response.status(201).send(genre)
             }).catch(function(error) {
                 response.status(200).send(error)
             })
@@ -158,8 +165,9 @@ app.put('/artists/:id', function(request, response) {
     })
 })
 
+//DELETE
 app.delete('/artists/:id', function(request, response) {
-    Artists.findById(request.params.id).then(function(artist) {
+    Genres.findById(request.params.id).then(function(artist) {
         if(artist) {
             artist.destroy().then(function(){
                 response.status(204).send()
@@ -170,15 +178,17 @@ app.delete('/artists/:id', function(request, response) {
     })
 })
 
-
-//get a list of songs
+//*******************************************************************
+//GET A LIST OF SONGS
 app.get('/songs', function(request, response) {
-    Songs.findAll().then(function(songs){
-        response.status(200).send(songs)
-    })
+    Songs.findAll().then(
+         function(songs) {
+               response.status(200).send(songs)
+        }
+    )
 })
 
-// get one Song by id
+// GET ONE SONG BY ID
 app.get('/songs/:id', function(request, response) {
     Songs.findOne({where: {id:request.params.id}}).then(function(song) {
         if(song) {
@@ -189,7 +199,7 @@ app.get('/songs/:id', function(request, response) {
     })
 })
 
-//create a new song
+//CREATE A NEW ARTIST
 app.post('/songs', function(request, response) {
     Songs.create(request.body).then(function(song) {
         response.status(201).send(song)
@@ -197,6 +207,7 @@ app.post('/songs', function(request, response) {
 })
 
 
+//UPDATE
 app.put('/songs/:id', function(request, response) {
     Songs.findById(request.params.id).then(function(song) {
         if(song) {
@@ -211,8 +222,9 @@ app.put('/songs/:id', function(request, response) {
     })
 })
 
+//DELETE
 app.delete('/songs/:id', function(request, response) {
-    Songs.findById(request.params.id).then(function(song) {
+    Genres.findById(request.params.id).then(function(song) {
         if(song) {
             song.destroy().then(function(){
                 response.status(204).send()
@@ -223,19 +235,74 @@ app.delete('/songs/:id', function(request, response) {
     })
 })
 
+//***************************************************************************
+// GET A LIST OF USERS
+app.get('/users', function(request, response) {
+    Users.findAll().then(function(users){
+        response.status(200).send(users)
+    })
+        
+})
 
-
-
-//get a list of playlists
-app.get('/playlist', function(request, response) {
-    Playlist.findAll().then(function(playlist){
-        response.status(200).send(playlist)
+// GET ONE USER BY ID
+app.get('/users/:id', function(request, response) {
+    Users.findOne({where: {id:request.params.id}}).then(function(user) {
+        if(user) {
+            response.status(200).send(user)
+        } else {
+            response.status(404).send()
+        }
     })
 })
 
-// get one playlist by id
-app.get('/playlist/:id', function(request, response) {
-    Playlist.findOne({where: {id:request.params.id}}).then(function(playlist) {
+//CREATE A NEW USER
+app.post('/users', function(request, response) {
+    Users.create(request.body).then(function(user) {
+        response.status(201).send(user)
+    })
+})
+
+//UPDATE
+app.put('/users/:id', function(request, response) {
+    Users.findById(request.params.id).then(function(user) {
+        if(user) {
+            user.update(request.body).then(function(user){
+                response.status(201).send(user)
+            }).catch(function(error) {
+                response.status(200).send(error)
+            })
+        } else {
+            response.status(404).send('Not found')
+        }
+    })
+})
+
+//DELETE
+app.delete('/users/:id', function(request, response) {
+    Users.findById(request.params.id).then(function(user) {
+        if(user) {
+            user.destroy().then(function(){
+                response.status(204).send()
+            })
+        } else {
+            response.status(404).send('Not found')
+        }
+    })
+})
+
+
+//***************************************************************************************
+//GET A LIST OF PLAYLISTS
+app.get('/playlists', function(request, response) {
+    Playlists.findAll().then(function(playlists){
+        response.status(200).send(playlists)
+    })
+        
+})
+
+// GET ONE PLAYLIST BY ID
+app.get('/playlists/:id', function(request, response) {
+    Playlists.findOne({where: {id:request.params.id}}).then(function(playlist) {
         if(playlist) {
             response.status(200).send(playlist)
         } else {
@@ -243,16 +310,18 @@ app.get('/playlist/:id', function(request, response) {
         }
     })
 })
-//create a new playlist
-app.post('/playlist', function(request, response) {
-    Playlist.create(request.body).then(function(playlist) {
+
+//CREATE A NEW PLAYLIST
+app.post('/playlists', function(request, response) {
+    Playlists.create(request.body).then(function(playlist) {
         response.status(201).send(playlist)
     })
 })
 
 
-app.put('/playlist/:id', function(request, response) {
-    Playlist.findById(request.params.id).then(function(playlist) {
+//UPDATE
+app.put('/playlists/:id', function(request, response) {
+    Playlists.findById(request.params.id).then(function(playlist) {
         if(playlist) {
             playlist.update(request.body).then(function(playlist){
                 response.status(201).send(playlist)
@@ -265,8 +334,9 @@ app.put('/playlist/:id', function(request, response) {
     })
 })
 
-app.delete('/playlist/:id', function(request, response) {
-    Playlist.findById(request.params.id).then(function(playlist) {
+//DELETE
+app.delete('/playlists/:id', function(request, response) {
+    Playlists.findById(request.params.id).then(function(playlist) {
         if(playlist) {
             playlist.destroy().then(function(){
                 response.status(204).send()
@@ -277,38 +347,39 @@ app.delete('/playlist/:id', function(request, response) {
     })
 })
 
-
-//get a list of songs
-app.get('/songs', function(request, response) {
-    Songs.findAll().then(function(songs){
-        response.status(200).send(songs)
+//***********************************************************************
+//GET THE SONGS FROM ALL THE PLAYLISTS
+app.get('/playlist_songs', function(request, response) {
+    Playlist_Songs.findAll().then(function(playlist_songs){
+        response.status(200).send(playlist_songs)
     })
+        
 })
 
-// get one Song by id
-app.get('/songs/:id', function(request, response) {
-    Songs.findOne({where: {id:request.params.id}}).then(function(song) {
-        if(song) {
-            response.status(200).send(song)
+// get one song from a playlist by id
+app.get('/playlist_songs/:id', function(request, response) {
+    Playlist_Songs.findOne({where: {id:request.params.id}}).then(function(playlist_song) {
+        if(playlist_song) {
+            response.status(200).send(playlist_song)
         } else {
             response.status(404).send()
         }
     })
 })
 
-//create a new song
-app.post('/songs', function(request, response) {
-    Songs.create(request.body).then(function(song) {
-        response.status(201).send(song)
+//CREATE A NEW SONG IN THE PLAYLIST
+app.post('/playlist_songs', function(request, response) {
+    Playlist_Songs.create(request.body).then(function(playlist_song) {
+        response.status(201).send(playlist_song)
     })
 })
 
-
-app.put('/songs/:id', function(request, response) {
-    Songs.findById(request.params.id).then(function(song) {
-        if(song) {
-            song.update(request.body).then(function(song){
-                response.status(201).send(song)
+//UPDATE
+app.put('/playlist_songs/:id', function(request, response) {
+    Playlist_Songs.findById(request.params.id).then(function(playlist_song) {
+        if(playlist_song) {
+            playlist_song.update(request.body).then(function(playlist_song){
+                response.status(201).send(playlist_song)
             }).catch(function(error) {
                 response.status(200).send(error)
             })
@@ -318,10 +389,11 @@ app.put('/songs/:id', function(request, response) {
     })
 })
 
-app.delete('/songs/:id', function(request, response) {
-    Songs.findById(request.params.id).then(function(song) {
-        if(song) {
-            song.destroy().then(function(){
+//DELETE
+app.delete('/playlist_songs/:id', function(request, response) {
+    Playlist_Songs.findById(request.params.id).then(function(playlist_song) {
+        if(playlist_song) {
+            playlist_song.destroy().then(function(){
                 response.status(204).send()
             })
         } else {
@@ -330,6 +402,4 @@ app.delete('/songs/:id', function(request, response) {
     })
 })
 
-
-
-
+app.listen(8080)
