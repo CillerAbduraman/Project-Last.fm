@@ -79,5 +79,5 @@ ADD PLAYLIST
 ADD item in PLAYLIST
 DELETE item from PLAYLIST
 DELETE playlist
--	Dacă o să fac și un istoric al căutărilor, aș putea adăuga sau șterge itemi și de acolo 
+-	Dacă o să fac și un istoric al căutărilor, aș putea adăuga sau șterge itemi și de acolo;
 -	Utilizatorii vor avea mai multe drepturi, dar momentan am gândit strictul necesar
