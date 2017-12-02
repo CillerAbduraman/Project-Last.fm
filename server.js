@@ -1,6 +1,6 @@
-var express = require("express");
-var Sequelize = require("sequelize");
-var nodeadmin = require("nodeadmin");
+var express = require("express")
+var Sequelize = require("sequelize")
+var app = express()
 
 //connect to mysql database
 var sequelize = new Sequelize('database', 'root', '', {
@@ -21,7 +21,7 @@ var Genres = sequelize.define('genres', {
 var Artists = sequelize.define('artists', {
   name: Sequelize.STRING,
   description: Sequelize.STRING,
-  image = Sequelize.STRING
+  image: Sequelize.STRING
 })
 
 var Songs = sequelize.define('songs', {
@@ -53,19 +53,19 @@ var Playlist_Songs = sequelize.define('playlist_songs', {
 })
 
 //****************************************************************************************
-Songs.belongTo(Genres, {foreignKey: "genreId", targetKey: "id"})
-Songs.belongTo(Artists, {foreignKey: "artistId", targetKey: "id"})
-Playlists.belongTo(Users, {foreignKey: "userId", targetKey: "id"})    
-Playlist_Songs.belongTo(Playlists, {foreignKey: "playlistId", targetKey: "id"})
-Playlist_Songs.belongTo(Songs, {foreignKey: "songId", targetKey: "id"})
+Songs.belongsTo(Genres, {foreignKey: "genreId", targetKey: "id"})
+Songs.belongsTo(Artists, {foreignKey: "artistId", targetKey: "id"})
+Playlists.belongsTo(Users, {foreignKey: "userId", targetKey: "id"})    
+Playlist_Songs.belongsTo(Playlists, {foreignKey: "playlistId", targetKey: "id"})
+Playlist_Songs.belongsTo(Songs, {foreignKey: "songId", targetKey: "id"})
 
 //****************************************************************************************
 
-app.use('/nodeadmin', nodeadmin(app))
 app.use(express.static('public'))
-app.use('/admin', express.static('admin'))
-app.use(express.json());      
-app.use(express.urlencoded()); 
+app.use('/public', express.static('public'))
+app.use(express.json())
+app.use(express.urlencoded({extended : true}))
+
 
 // ****************************************************************************************
 //GET A LIST OF GENRES
