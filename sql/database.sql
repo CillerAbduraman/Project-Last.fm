@@ -60,9 +60,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `id` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- Table structure for table `playlist`
+-- Table structure for table `playlists`
 
-CREATE TABLE IF NOT EXISTS `playlist` (
+CREATE TABLE IF NOT EXISTS `playlists` (
   `id` smallint(5) NOT NULL AUTO_INCREMENT,
   `userId` smallint(5) NOT NULL,
   `name` varchar(30) DEFAULT NULL,
