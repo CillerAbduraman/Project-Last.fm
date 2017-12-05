@@ -1,5 +1,27 @@
 # Project-Last.fm
 
+GET https://proiect-tehnologii-cillera.c9users.io/users
+[
+    {
+        "id": 1,
+        "username": "",
+        "password": "",
+        "email": null,
+        "image": null,
+        "createdAt": "2017-12-05T07:17:48.000Z",
+        "updatedAt": "2017-12-05T07:17:48.000Z"
+    },
+    {
+        "id": 2,
+        "username": "cillerA",
+        "password": " parola",
+        "email": "ciller.abduraman@gmail.com",
+        "image": "https://www.w3schools.com/w3css/img_fjords.jpg",
+        "createdAt": "2017-12-05T07:23:30.000Z",
+        "updatedAt": null
+    }
+]
+__________________________________________________________________________________________
 
 MANAGEMENT DE MELODII FAVORITE CU INTEGRARE CU SPOTIFY(sau LAST.FM)
 
