@@ -1,13 +1,36 @@
 # Project-Last.fm
 
+
+                                MANAGEMENT DE MELODII FAVORITE CU INTEGRARE CU SPOTIFY(sau LAST.FM)
+
 PAȘI DE URMAT
-1. 
+1. git clone https://github.com/CillerAbduraman/project_last.fm.git
+2. cd project_last.fm
+3. npm install 
+4. mysql-ctl start
+5. mysql -u root
+6. source ~/workspace/project_last.fm/sql/database.sql
+7. insert operations 
+8. exit
+9. node server.js
+
+Baza mea de date contine 6 tabele: 
+    - Genres
+    - Artists
+    - Songs
+    - Playlists
+    - Playlist_Songs
+    - Users
+Pentru fiecare tabela, am realizat urmatoarele operații : 
+    - GET ALL Genres/Artists/Songs/Playlists/Playlist_Songs/Users
+    - GET BY ID
+    - ADD 
+    - UPDATE 
+    - DELETE
+Dupa pornirea serverului, am folosit aplicatia Postman pentru a verifica daca am lucrat corect. 
 
 
-
-
-
-GET https://proiect-tehnologii-cillera.c9users.io/users
+GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
 [
     {
         "id": 1,
@@ -28,9 +51,53 @@ GET https://proiect-tehnologii-cillera.c9users.io/users
         "updatedAt": null
     }
 ]
-__________________________________________________________________________________________
 
-MANAGEMENT DE MELODII FAVORITE CU INTEGRARE CU SPOTIFY(sau LAST.FM)
+
+GET https://proiect-tehnologii-cillera.c9users.io/users/2  - GET A USER BY ID=2
+{
+    "id": 2,
+    "username": "cillerA",
+    "password": " parola",
+    "email": "ciller.abduraman@gmail.com",
+    "image": "https://www.w3schools.com/w3css/img_fjords.jpg",
+    "createdAt": "2017-12-05T07:23:30.000Z",
+    "updatedAt": null
+}
+
+POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER
+{
+    "id": 3,
+    "updatedAt": "2017-12-08T19:10:01.430Z",
+    "createdAt": "2017-12-08T19:10:01.430Z"
+}
+
+PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATA A USER 
+
+
+DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - ID=2; Am facut un GET dupa, iar rezultatul este mai jos:
+[
+    {
+        "id": 2,
+        "username": "cillerA",
+        "password": " parola",
+        "email": "ciller.abduraman@gmail.com",
+        "image": "https://www.w3schools.com/w3css/img_fjords.jpg",
+        "createdAt": "2017-12-05T07:23:30.000Z",
+        "updatedAt": null
+    },
+    {
+        "id": 3,
+        "username": "",
+        "password": "",
+        "email": null,
+        "image": null,
+        "createdAt": "2017-12-08T19:10:01.000Z",
+        "updatedAt": "2017-12-08T19:10:01.000Z"
+    }
+]
+
+
+__________________________________________________________________________________________
 
 CE ESTE LAST.FM?
 -	Site web de muzică, fondat în anul 2002 în Marea Britanie
