@@ -75,10 +75,10 @@
     "createdAt": "2017-12-08T19:10:01.430Z"
 }
 
-### PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATA A USER 
+### PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATE A USER 
 
 
-### DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - ID=2; Am facut un GET dupa, iar rezultatul este mai jos:
+### DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - ID=2 
     {
        ## "id": 2,
         "username": "cillerA",
