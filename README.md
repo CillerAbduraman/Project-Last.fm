@@ -34,7 +34,7 @@
 [
     {
     
-        "id": 1,
+       ## "id": 1,
         "username": "",
         "password": "",
         "email": null,
@@ -43,7 +43,7 @@
         "updatedAt": "2017-12-05T07:17:48.000Z"
     },
     {
-        "id": 2,
+       ## "id": 2,
         "username": "cillerA",
         "password": " parola",
         "email": "ciller.abduraman@gmail.com",
@@ -57,7 +57,7 @@
 
 ### GET https://proiect-tehnologii-cillera.c9users.io/users/2  - GET A USER BY ID=2
 {
-    "id": 2,
+    ## "id": 2,
     "username": "cillerA",
     "password": " parola",
     "email": "ciller.abduraman@gmail.com",
@@ -68,7 +68,7 @@
 
 ### POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER
 {
-    "id": 3,
+    ## "id": 3,
     "updatedAt": "2017-12-08T19:10:01.430Z",
     "createdAt": "2017-12-08T19:10:01.430Z"
 }
