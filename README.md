@@ -27,7 +27,7 @@
     - ADD 
     - UPDATE 
     - DELETE
-## Dupa pornirea serverului, am folosit aplicatia **Postman** pentru a verifica daca am lucrat corect. 
+### Dupa pornirea serverului, am folosit aplicatia **Postman** pentru a verifica daca am lucrat corect. 
 
 
 ### GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
