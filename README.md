@@ -34,7 +34,7 @@
 [
     {
     
-       ## "id": 1,
+        "id": 1,
         "username": "",
         "password": "",
         "email": null,
@@ -43,7 +43,7 @@
         "updatedAt": "2017-12-05T07:17:48.000Z"
     },
     {
-       ## "id": 2,
+        "id": 2,
         "username": "cillerA",
         "password": " parola",
         "email": "ciller.abduraman@gmail.com",
