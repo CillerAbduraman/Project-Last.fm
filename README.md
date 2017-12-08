@@ -75,7 +75,15 @@
     "createdAt": "2017-12-08T19:10:01.430Z"
 }
 
-### PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATE A USER 
+### PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATE A USER  {
+    "id": 2,
+    "username": "cillerA",
+    "password": " parola",
+    "email": "ciller.abduraman@gmail.com",
+    "image": "https://www.w3schools.com/w3css/img_fjords.jpg",
+    "createdAt": "2017-12-05T07:23:30.000Z",
+    "updatedAt": null
+}
 
 
 ### DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - ID=2 
