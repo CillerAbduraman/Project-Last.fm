@@ -1,7 +1,7 @@
 # Project-Last.fm
 
 
-                                ## MANAGEMENT DE MELODII FAVORITE CU INTEGRARE CU SPOTIFY(sau LAST.FM)
+                                MANAGEMENT DE MELODII FAVORITE CU INTEGRARE CU SPOTIFY(sau LAST.FM)
 
 ### **PAȘI DE URMAT**
 1. git clone https://github.com/CillerAbduraman/project_last.fm.git
@@ -21,19 +21,19 @@
     - Playlists
     - Playlist_Songs
     - Users
-Pentru fiecare tabela, am realizat urmatoarele operații : 
+## Pentru fiecare tabela, am realizat urmatoarele operații : 
     - GET ALL Genres/Artists/Songs/Playlists/Playlist_Songs/Users
     - GET BY ID
     - ADD 
     - UPDATE 
     - DELETE
-Dupa pornirea serverului, am folosit aplicatia **Postman** pentru a verifica daca am lucrat corect. 
+## Dupa pornirea serverului, am folosit aplicatia **Postman** pentru a verifica daca am lucrat corect. 
 
 
 ### GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
 [
     {
-        "id": 1,
+      ###  "id": 1,
         "username": "",
         "password": "",
         "email": null,
