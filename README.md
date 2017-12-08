@@ -120,9 +120,9 @@ SERVICIU EXTERN API - https://www.last.fm/api/intro - aici am toate metodele fol
 
 
 ## PAȘI DE URMAT PENTRU REALIZAREA UNUI SINGLE PAGE APPLICATION
-1.DESIGN USER INTERFACE – vezi foto 
-2.IDENTIFY COMPONENTS
-3.IDENTIFY API CALLS
+1. DESIGN USER INTERFACE – vezi foto 
+2. IDENTIFY COMPONENTS
+3. IDENTIFY API CALLS
 4. DEFINE USER ACTIONS 
 
 
@@ -155,29 +155,31 @@ Butonul de search va găsi atât artiști, cât și melodii.
 
 
 ## IDENTIFY API CALLS – gândite foarte basic, o să am nevoie de mai multe call-uri pe parcurs
-**GET / PUT/ Categories (în funcție de id)
-GET / PUT / Artists
-GET / PUT/Songs
-GET / PUT /Top Artists 
-GET / PUT /Top Tracks
-GET / PUT/ Top New Releases
-GET / PUT / Most Loved
-GET / POST (in functie de ID)Playlists 
-GET / POST /  Now playing 
-GET /  Artist, Song / ? Search
-GET / PUT  / DELETE  Playlist (existent sau nou)**
+- GET / PUT/ Categories (în funcție de id)
+- GET / PUT / Artists
+- GET / PUT/Songs
+- GET / PUT /Top Artists 
+- GET / PUT /Top Tracks
+- GET / PUT/ Top New Releases
+- GET / PUT / Most Loved
+- GET / POST (in functie de ID)Playlists 
+- GET / POST /  Now playing 
+- GET /  Artist, Song / ? Search
+- GET / PUT  / DELETE  Playlist (existent sau nou)
 
 ## DEFINE USER ACTIONS
-**VIEW SONGS IN A CATEGORY
-VIEW SONGS IN GENERAL 
-VIEW ARTISTS
-VIEW PLAYLISTS
-VIEW TOP Artists / Top Tracks / New Releases / Most Loved
-VIEW NOW PLAYING
-SEARCH BY artist, song NAME
-ADD PLAYLIST 
-ADD item in PLAYLIST
-DELETE item from PLAYLIST
-DELETE playlist**
+- VIEW SONGS IN A CATEGORY
+- VIEW SONGS IN GENERAL 
+- VIEW ARTISTS
+- VIEW PLAYLISTS
+- VIEW TOP Artists / Top Tracks / New Releases / Most Loved
+- VIEW NOW PLAYING
+- SEARCH BY artist, song NAME
+- ADD PLAYLIST 
+- ADD item in PLAYLIST
+- DELETE item from PLAYLIST
+- DELETE playlist
+
+
 -	Dacă o să fac și un istoric al căutărilor, aș putea adăuga sau șterge itemi și de acolo;
 -	Utilizatorii vor avea mai multe drepturi, dar momentan am gândit strictul necesar
