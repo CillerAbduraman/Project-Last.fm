@@ -86,7 +86,7 @@
 }
 
 
-### DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - ID=2 
+### DELETE https://proiect-tehnologii-cillera.c9users.io/users/1  - DELETE A USER - ID=2 
     {
        ## "id": 2,
         "username": "cillerA",
