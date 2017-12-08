@@ -1,0 +1,23 @@
+{
+  "name": "proiect",
+  "version": "1.0.0",
+  "description": "sper sa mearga",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CillerAbduraman/project_last.fm.git"
+  },
+  "author": "cillerabduraman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CillerAbduraman/project_last.fm/issues"
+  },
+  "homepage": "https://github.com/CillerAbduraman/project_last.fm#readme",
+  "dependencies": {
+    "mysql2": "^1.5.1"
+  }
+}
