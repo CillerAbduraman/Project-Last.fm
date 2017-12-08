@@ -33,7 +33,8 @@
 ### GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
 [
     {
-      ###  "id": 1,
+    '''
+        "id": 1,
         "username": "",
         "password": "",
         "email": null,
@@ -49,6 +50,7 @@
         "image": "https://www.w3schools.com/w3css/img_fjords.jpg",
         "createdAt": "2017-12-05T07:23:30.000Z",
         "updatedAt": null
+      '''
     }
 ]
 
