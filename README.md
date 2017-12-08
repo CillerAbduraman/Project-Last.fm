@@ -57,7 +57,7 @@
 
 ### GET https://proiect-tehnologii-cillera.c9users.io/users/2  - GET A USER BY ID=2
 {
-    ## "id": 2,
+    "id": 2,
     "username": "cillerA",
     "password": " parola",
     "email": "ciller.abduraman@gmail.com",
@@ -68,7 +68,7 @@
 
 ### POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER
 {
-    ## "id": 3,
+    "id": 3,
     "updatedAt": "2017-12-08T19:10:01.430Z",
     "createdAt": "2017-12-08T19:10:01.430Z"
 }
@@ -180,6 +180,6 @@ Butonul de search va găsi atât artiști, cât și melodii.
 - DELETE item from PLAYLIST
 - DELETE playlist
 
-
+________________________________________________________________________________
 -	Dacă o să fac și un istoric al căutărilor, aș putea adăuga sau șterge itemi și de acolo;
 -	Utilizatorii vor avea mai multe drepturi, dar momentan am gândit strictul necesar
