@@ -1,9 +1,9 @@
 # Project-Last.fm
 
 
-                                MANAGEMENT DE MELODII FAVORITE CU INTEGRARE CU SPOTIFY(sau LAST.FM)
+                                ## MANAGEMENT DE MELODII FAVORITE CU INTEGRARE CU SPOTIFY(sau LAST.FM)
 
-PAȘI DE URMAT
+### **PAȘI DE URMAT**
 1. git clone https://github.com/CillerAbduraman/project_last.fm.git
 2. cd project_last.fm
 3. npm install 
@@ -14,7 +14,7 @@ PAȘI DE URMAT
 8. exit
 9. node server.js
 
-Baza mea de date contine 6 tabele: 
+### Baza mea de date contine 6 tabele: 
     - Genres
     - Artists
     - Songs
@@ -27,10 +27,10 @@ Pentru fiecare tabela, am realizat urmatoarele operații :
     - ADD 
     - UPDATE 
     - DELETE
-Dupa pornirea serverului, am folosit aplicatia Postman pentru a verifica daca am lucrat corect. 
+Dupa pornirea serverului, am folosit aplicatia **Postman** pentru a verifica daca am lucrat corect. 
 
 
-GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
+### GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
 [
     {
         "id": 1,
@@ -53,7 +53,7 @@ GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
 ]
 
 
-GET https://proiect-tehnologii-cillera.c9users.io/users/2  - GET A USER BY ID=2
+### GET https://proiect-tehnologii-cillera.c9users.io/users/2  - GET A USER BY ID=2
 {
     "id": 2,
     "username": "cillerA",
@@ -64,17 +64,17 @@ GET https://proiect-tehnologii-cillera.c9users.io/users/2  - GET A USER BY ID=2
     "updatedAt": null
 }
 
-POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER
+### POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER
 {
     "id": 3,
     "updatedAt": "2017-12-08T19:10:01.430Z",
     "createdAt": "2017-12-08T19:10:01.430Z"
 }
 
-PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATA A USER 
+### PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATA A USER 
 
 
-DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - ID=2; Am facut un GET dupa, iar rezultatul este mai jos:
+### DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - ID=2; Am facut un GET dupa, iar rezultatul este mai jos:
 [
     {
         "id": 2,
@@ -99,7 +99,7 @@ DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - 
 
 __________________________________________________________________________________________
 
-CE ESTE LAST.FM?
+## CE ESTE LAST.FM?
 -	Site web de muzică, fondat în anul 2002 în Marea Britanie
 -	Folosește un sistem de recomandare numit Audioscrobbler
 -	Construiește un profil personalizat al fiecărui utilizator, folosindu-se de preferințele acestuia, fie accesând stațiile radio de pe Internet, fie din folderele de muzică de pe calculatorul personal sau de pe alte device-uri de tip media player.
