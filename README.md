@@ -21,7 +21,7 @@
     - Playlists
     - Playlist_Songs
     - Users
-## Pentru fiecare tabela, am realizat urmatoarele operații : 
+### Pentru fiecare tabela, am realizat urmatoarele operații : 
     - GET ALL Genres/Artists/Songs/Playlists/Playlist_Songs/Users
     - GET BY ID
     - ADD 
@@ -30,7 +30,7 @@
 ### Dupa pornirea serverului, am folosit aplicatia **Postman** pentru a verifica daca am lucrat corect. 
 
 
-### GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
+#### GET https://proiect-tehnologii-cillera.c9users.io/users    - GET ALL USERS
 [
     {
     
@@ -56,7 +56,7 @@
 ]
 
 
-### GET https://proiect-tehnologii-cillera.c9users.io/users/2  - GET A USER BY ID=2
+#### GET https://proiect-tehnologii-cillera.c9users.io/users/2  - GET A USER BY ID=2
   {
   
     "id": 2,
@@ -69,13 +69,13 @@
 }
 
 
-### POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER {
+#### POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER {
     "id": 3,
     "updatedAt": "2017-12-08T19:10:01.430Z",
     "createdAt": "2017-12-08T19:10:01.430Z"
 }
 
-### PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATE A USER  {
+#### PUT https://proiect-tehnologii-cillera.c9users.io/users/2  - UPDATE A USER  {
     "id": 2,
     "username": "cillerA",
     "password": " parola",
@@ -86,7 +86,7 @@
 }
 
 
-### DELETE https://proiect-tehnologii-cillera.c9users.io/users/1  - DELETE A USER - ID=2 
+#### DELETE https://proiect-tehnologii-cillera.c9users.io/users/1  - DELETE A USER - ID=2 
     {
        ## "id": 2,
         "username": "cillerA",
@@ -109,7 +109,7 @@
 
 __________________________________________________________________________________________
 
-# CE ESTE LAST.FM?
+## CE ESTE LAST.FM?
 -	Site web de muzică, fondat în anul 2002 în Marea Britanie
 -	Folosește un sistem de recomandare numit Audioscrobbler
 -	Construiește un profil personalizat al fiecărui utilizator, folosindu-se de preferințele acestuia, fie accesând stațiile radio de pe Internet, fie din folderele de muzică de pe calculatorul personal sau de pe alte device-uri de tip media player.
@@ -135,7 +135,7 @@ SERVICIU EXTERN API - https://www.last.fm/api/intro - aici am toate metodele fol
 
 
 
-# DESCRIERE APLICAȚIE 
+## DESCRIERE APLICAȚIE 
 Inițial am conceput această aplicație ca fiind folosită de mai mulți utilizatori, dar ulterior m-am reorientat și am renunțat la formularele de Sign Up și Log In pentru a realiza doar managementul melodiilor preferate ale unui singur utilizator.
 În cele ce urmează, voi realiza un Logo și voi alege un nume catchy. Mă gândeam să am o pagină de ABOUT cu preferințele mele în materie de muzică, dar rămâne de văzut. 
 Momentan voi avea 2 meniuri laterale cu următoarele opțiuni : 
