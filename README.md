@@ -69,8 +69,7 @@
 }
 
 
-## POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER
-  {
+### POST https://proiect-tehnologii-cillera.c9users.io/users  - ADD A USER {
     "id": 3,
     "updatedAt": "2017-12-08T19:10:01.430Z",
     "createdAt": "2017-12-08T19:10:01.430Z"
@@ -80,7 +79,6 @@
 
 
 ### DELETE https://proiect-tehnologii-cillera.c9users.io/users/2  - DELETE A USER - ID=2; Am facut un GET dupa, iar rezultatul este mai jos:
-[
     {
        ## "id": 2,
         "username": "cillerA",
@@ -99,7 +97,6 @@
         "createdAt": "2017-12-08T19:10:01.000Z",
         "updatedAt": "2017-12-08T19:10:01.000Z"
     }
-]
 
 
 __________________________________________________________________________________________
