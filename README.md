@@ -1,5 +1,12 @@
 # Project-Last.fm
 
+PAȘI DE URMAT
+1. 
+
+
+
+
+
 GET https://proiect-tehnologii-cillera.c9users.io/users
 [
     {
