@@ -1,23 +1,19 @@
 {
-  "name": "proiect",
-  "version": "1.0.0",
-  "description": "sper sa mearga",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CillerAbduraman/project_last.fm.git"
-  },
-  "author": "cillerabduraman",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CillerAbduraman/project_last.fm/issues"
-  },
-  "homepage": "https://github.com/CillerAbduraman/project_last.fm#readme",
   "dependencies": {
-    "mysql2": "^1.5.1"
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "create-react-class": "^15.6.2",
+    "express": "^4.16.2",
+    "express-react-views": "^0.10.4",
+    "fetch": "^1.1.0",
+    "get-json": "^1.0.0",
+    "jquery": "^3.2.1",
+    "jquery-migrate": "^3.0.1",
+    "mysql2": "^1.5.1",
+    "nodeadmin": "*",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "reactstrap": "^5.0.0-alpha.4",
+    "sequelize": "*"
   }
 }
